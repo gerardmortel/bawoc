@@ -17,7 +17,7 @@ The purpose of this repo is to install the IBM Business Automation on Containers
 2. yum install -y git unzip
 3. cd
 4. rm -f main.zip
-5. wget https://github.com/gerardmortel/db2bawoc/archive/refs/heads/main.zip
+5. wget https://github.com/gerardmortel/bawoc/archive/refs/heads/main.zip
 6. unzip main.zip
 7. rm -f main.zip
 8. cd bawoc-main
