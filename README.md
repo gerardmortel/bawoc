@@ -1,4 +1,4 @@
-# Install IBM Business Automation on Containers on OpenShift on Fyre
+# Install IBM Business Automation Workflow on Containers (BAWoC) on OpenShift on Fyre
 # https://github.ibm.com/gmortel/bawoc
 
 # Resources used to create this
