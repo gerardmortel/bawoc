@@ -14,7 +14,7 @@ The purpose of this repo is to install the IBM Business Automation on Containers
 
 # Instructions
 1. ssh into the infrastructure node as root (e.g. ssh root@api.slavers.cp.fyre.ibm.com)
-2. yum install -y git unzip
+2. yum install -y git unzip podman
 3. cd
 4. rm -f main.zip
 5. wget https://github.com/gerardmortel/bawoc/archive/refs/heads/main.zip
