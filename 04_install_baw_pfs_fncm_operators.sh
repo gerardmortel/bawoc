@@ -56,6 +56,10 @@ tar -xvf 22.0.2-IF004.tar
 # --namespace ${NAMESPACE} \
 # {}args "{-}-registry ${LOCAL_REGISTRY} --inputDir ${OFFLINEDIR}
 
+###########################################################
+### From https://www.ibm.com/support/pages/node/6590269 ###
+###########################################################
+
 # Apply IBM Cloud Pak for Automation yamls
 # cd ${HOME}/offline/ibm-*/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/descriptors
 cd cert-kubernetes/descriptors
