@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo ""
+echo "================================================================================"
+echo "=== In 04_install_baw_pfs_fncm_operators.sh ===================================="
+echo "================================================================================"
+echo ""
+
 # Login to IBM Container Registry
 podman login cp.icr.io -u cp -p $ENTITLED_REGISTRY_KEY
 
