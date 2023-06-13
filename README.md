@@ -2,10 +2,14 @@
 # https://github.ibm.com/gmortel/bawoc
 
 # Resources used to create this
+Setting up the cluster without an internet connection
 https://www.ibm.com/docs/en/baw/22.x?topic=deployment-setting-up-cluster-without-internet-connection
 
+Installing IBM Business Automation Workflow on containers 22.0.1 or 22.0.2 on Kubernetes
+https://www.ibm.com/support/pages/node/6590269
+
 # Purpose
-The purpose of this repo is to install the IBM Business Automation on Containers on OpenShift on Fyre.
+The purpose of this repo is to install the IBM Business Automation on Containers (BAWoC) on OpenShift on Fyre.
 
 # Prerequisites
 1. OpenShift cluster on Fyre
