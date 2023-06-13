@@ -23,10 +23,11 @@ The purpose of this repo is to install the IBM Business Automation on Containers
 1. ssh into the infrastructure node as root (e.g. ssh root@api.slavers.cp.fyre.ibm.com)
 2. yum install -y git unzip podman
 3. cd
-4. rm -f main.zip
-5. wget https://github.com/gerardmortel/bawoc/archive/refs/heads/main.zip
-6. unzip main.zip
-7. rm -f main.zip
-8. cd bawoc-main
-9. Put your values for API_KEY_GENERATED, USER_EMAIL, NS and CASE_VERSION inside file 02_setup_env.sh
-10. ./01_driver.sh
+4. rm -rf bawoc-main
+5. rm -f main.zip
+6. wget https://github.com/gerardmortel/bawoc/archive/refs/heads/main.zip
+7. unzip main.zip
+8. rm -f main.zip
+9. cd bawoc-main
+10. Put your values for API_KEY_GENERATED, USER_EMAIL, NS and CASE_VERSION inside file 02_setup_env.sh
+11. ./01_driver.sh
