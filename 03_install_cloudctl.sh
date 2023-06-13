@@ -19,7 +19,3 @@ tar -xvf cloudctl-linux-amd64.tar.gz
 
 # Copy cloudctl to /usr/bin directory which in the PATH and rename to cloudctl
 cp cloudctl-linux-amd64 /usr/bin/cloudctl
-
-echo ""
-echo "================================================================================"
-echo ""

@@ -20,7 +20,3 @@ export CASE_ARCHIVE=ibm-cs-bawautomation-2.4.5.tgz
 export CASE_INVENTORY_SETUP=cp4aOperatorSetup
 export OFFLINEDIR=${HOME}/offline
 export LOCAL_REGISTRY="cp.icr.io"
-
-echo ""
-echo "================================================================================"
-echo ""
