@@ -109,7 +109,8 @@ kubectl apply -f service_account.yaml
 kubectl apply -f operator.yaml
 
 # Apply FileNet Content Manager yamls
-cd ${HOME}/offline/ibm-*/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/descriptors/sub-operator/FNCM
+# cd ${HOME}/offline/ibm-*/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/descriptors/sub-operator/FNCM
+cd ../PFS
 kubectl apply -f icp4a.ibm.com_contentrequests.yaml
 kubectl apply -f icp4a.ibm.com_contents.yaml
 kubectl apply -f cluster_role.yaml
