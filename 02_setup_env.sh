@@ -10,6 +10,7 @@ echo ""
 
 # Get entitlement key from https://myibm.ibm.com/products-services/containerlibrary
 export API_KEY_GENERATED=""
+export LDAPADMINPASSWORD=""
 export USER_EMAIL="gmortel@us.ibm.com"
 export NAMESPACE=cp4ba
 
