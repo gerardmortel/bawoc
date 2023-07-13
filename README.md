@@ -29,5 +29,5 @@ The purpose of this repo is to install the IBM Business Automation on Containers
 7. unzip main.zip
 8. rm -f main.zip
 9. cd bawoc-main
-10. Put your values for API_KEY_GENERATED, LDAPADMINPASSWORD, USER_EMAIL, NS and CASE_VERSION inside file 02_setup_env.sh
+10. Put your values for API_KEY_GENERATED, LDAPADMINPASSWORD, USER_EMAIL, NAMESPACE, CASE_ARCHIVE, P8ADMINUSER, P8ADMINPASSWORD, P8ADMINGROUP inside file 02_setup_env.sh
 11. ./01_driver.sh
