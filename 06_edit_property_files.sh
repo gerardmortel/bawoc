@@ -106,17 +106,18 @@ sed -r "s/CONTENT_INITIALIZATION.CPE_OBJ_STORE_WORKFLOW_PE_CONN_POINT_NAME=\"<Re
 ##              USER Property for BAN             ##
 ####################################################
 ## Provide the user name for BAN. For example: "BANAdmin"
-BAN.APPLOGIN_USER="<Required>"
+sed -r "s/BAN.APPLOGIN_USER=\"<Required>\"/BAN.APPLOGIN_USER=\"${P8ADMINUSER}\"/g" baw_user_profile.property.11 > baw_user_profile.property.12
 ## Provide the user password for BAN.
-BAN.APPLOGIN_PASSWORD="<Required>"
+sed -r "s/BAN.APPLOGIN_PASSWORD=\"<Required>\"/BAN.APPLOGIN_PASSWORD=\"${P8ADMINPASSWORD}\"/g" > baw_user_profile.property.12 > baw_user_profile.property.13
 ## Provide LTPA key password for BAN deployment.
-BAN.LTPA_PASSWORD="<Required>"
+sed -r "s/BAN.LTPA_PASSWORD=\"<Required>\"/BAN.LTPA_PASSWORD=\"${BANLTPAPASSWORD}\"/g" baw_user_profile.property.13 > baw_user_profile.property.14
 ## Provide keystore password for BAN deployment.
-BAN.KEYSTORE_PASSWORD="<Required>"
+sed -r "s/BAN.KEYSTORE_PASSWORD=\"<Required>\"/BAN.KEYSTORE_PASSWORD=\"${BANKEYSTOREPASSWORD}\"/g" baw_user_profile.property.14 > baw_user_profile.property.15
 ## Provide the user name for jMail used by BAN. For example: "jMailAdmin"
-BAN.JMAIL_USER_NAME="<Optional>"
+sed -r "s/BAN.JMAIL_USER_NAME=\"<Optional>\"/BAN.JMAIL_USER_NAME=\"${BANJMAILUSERNAME}\"/g" baw_user_profile.property.15 > baw_user_profile.property.16
 ## Provide the user password for jMail used by BAN.
-BAN.JMAIL_USER_PASSWORD="<Optional>"
+sed -r "s/BAN.JMAIL_USER_PASSWORD=\"<Optional>\"/BAN.JMAIL_USER_PASSWORD=\"${BANJMAILPASSWORD}\"/g" baw_user_profile.property.16 > baw_user_profile.property.17
+
 ####################################################
 ##           USER Property for AE                 ##
 ####################################################
@@ -124,16 +125,16 @@ BAN.JMAIL_USER_PASSWORD="<Optional>"
 ## This user ID should be in the IBM Business Automation Navigator administrator role, as specified as appLoginUsername in the Navigator secret. 
 ## This user should also belong to the User Management Service (UMS) Teams admin group or the UMS Teams Administrators team.
 ## If not, follow the instructions in "Completing post-deployment tasks for Business Automation Studio and Application Engine" in the IBM Documentation to add it to the Navigator Administrator role and UMS team server admin group.
-APP_ENGINE.ADMIN_USER="<Required>"
+sed -r "s/APP_ENGINE.ADMIN_USER=\"<Required>\"/APP_ENGINE.ADMIN_USER=\"${P8ADMINUSER}\"/g" baw_user_profile.property.17 > baw_user_profile.property.18
 ####################################################
 ##           USER Property for BAW                ##
 ####################################################
 ## Designate an existing LDAP user for the Workflow Server admin user.
-BAW_RUNTIME.ADMIN_USER="<Required>"
+sed -r "s/BAW_RUNTIME.ADMIN_USER=\"<Required>\"/BAW_RUNTIME.ADMIN_USER=\"${P8ADMINUSER}\"/g" baw_user_profile.property.18 > baw_user_profile.property.19
 ####################################################
 ##           USER Property for UMS                ##
 ####################################################
 ## Specify the user and password values for an internal UMS admin user that will be created in a local user registry. 
 ## This user must be unique and not exist in the LDAP user registry. 
-UMS.ADMIN_USER="<Required>"
-UMS.ADMIN_PASSWORD="<Required>"
+sed -r "s/UMS.ADMIN_USER=\"<Required>\"/UMS.ADMIN_USER=\"${UMSADMINUSER}\"/g" baw_user_profile.property.19 > baw_user_profile.property.20
+sed -r "s/UMS.ADMIN_PASSWORD="<Required>"/UMS.ADMIN_PASSWORD="${UMSADMINPASSWORD}"/g" baw_user_profile.property.20 > baw_user_profile.property.21

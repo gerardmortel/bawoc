@@ -13,6 +13,16 @@ export API_KEY_GENERATED=""
 export LDAPADMINPASSWORD=""
 export USER_EMAIL="gmortel@us.ibm.com"
 export NAMESPACE=cp4ba
+export P8ADMINUSER="user1"
+export P8ADMINPASSWORD=""
+export P8ADMINGROUP="Admins"
+export CPEWORKFLOWCONNPOINTNAME="cpe_conn_tos"
+export BANLTPAPASSWORD=""
+export BANKEYSTOREPASSWORD=""
+export BANJMAILUSERNAME="jMailAdmin"
+export BANJMAILPASSWORD=""
+export UMSADMINUSER="cpeadmin" # Must NOT be in LDAP
+export UMSADMINPASSWORD=""
 
 # Example BAW CASE file info
 # https://github.com/IBM/cloud-pak/raw/master/repo/case/ibm-cs-bawautomation/2.4.5/ibm-cs-bawautomation-2.4.5.tgz
