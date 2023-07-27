@@ -7,4 +7,5 @@ echo "==========================================================================
 echo ""
 
 # Generate property files
+cd ibm-cs-bawautomation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts
 ./baw-prerequisites.sh -m generate
