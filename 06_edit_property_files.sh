@@ -42,7 +42,7 @@ sed -r "s|<DB_SERVER_NAME>.UMS_|UMSDB.UMS_|g" baw_db_name_user.property.10 > baw
 sed -r "s/USER_NAME=\"<youruser1>\"/USER_NAME=\"db2inst1\"/g" baw_db_name_user.property.11 > baw_db_name_user.property.12
 sed -r "s/USER_PASSWORD=\"<yourpassword>\"/USER_PASSWORD=\"cicdtest\"/g" baw_db_name_user.property.12 > baw_db_name_user.property.13
 rm -f baw_db_name_user.property
-cp baw_db_name_user.property.11 baw_db_name_user.property
+cp baw_db_name_user.property.13 baw_db_name_user.property
 
 # Edit baw_db_server.property
 cp -p baw_db_server.property baw_db_server.property.orig
