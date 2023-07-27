@@ -56,6 +56,8 @@ sed -r "s/SSL_ENABLE=\"True\"/SSL_ENABLE=\"false\"/g" baw_db_server.property.2 >
 sed -r "s/SERVERNAME=\"<Optional>\"/SERVERNAME=\"\"/g" baw_db_server.property.3 > baw_db_server.property.4
 # %s/PORT=\"<Optional>\"/PORT=\"\"/g
 sed -r "s/PORT=\"<Optional>\"/PORT=\"\"/g" baw_db_server.property.4 > baw_db_server.property.5
+
+# Copy last file to first file
 rm -f baw_db_server.property
 cp baw_db_server.property.5 baw_db_server.property
 
@@ -76,6 +78,8 @@ sed -r 's|LDAP_GROUP_MEMBERSHIP_SEARCH_FILTER="<Required>"|LDAP_GROUP_MEMBERSHIP
 sed -r 's|LDAP_GROUP_MEMBER_ID_MAP="<Required>"|LDAP_GROUP_MEMBER_ID_MAP="groupOfUniqueNames:uniqueMember"|g' baw_LDAP.property.12 > baw_LDAP.property.13
 sed -r 's|LC_USER_FILTER="<Required>"|LC_USER_FILTER="(\&(uid=%v)(objectclass=person))"|g' baw_LDAP.property.13 > baw_LDAP.property.14
 sed -r 's|LC_GROUP_FILTER="<Required>"|LC_GROUP_FILTER="(\&(cn=%v)(objectclass=groupOfUniqueNames))"|g' baw_LDAP.property.14 > baw_LDAP.property.15
+
+# Copy last file to first file
 rm -f baw_LDAP.property
 cp baw_LDAP.property.15 baw_LDAP.property
 
@@ -138,3 +142,7 @@ sed -r "s/BAW_RUNTIME.ADMIN_USER=\"<Required>\"/BAW_RUNTIME.ADMIN_USER=\"${P8ADM
 ## This user must be unique and not exist in the LDAP user registry. 
 sed -r "s/UMS.ADMIN_USER=\"<Required>\"/UMS.ADMIN_USER=\"${UMSADMINUSER}\"/g" baw_user_profile.property.19 > baw_user_profile.property.20
 sed -r "s/UMS.ADMIN_PASSWORD=\"<Required>\"/UMS.ADMIN_PASSWORD=\"${UMSADMINPASSWORD}\"/g" baw_user_profile.property.20 > baw_user_profile.property.21
+
+# Copy last file to first file
+rm -f baw_user_profile.property
+cp baw_user_profile.property.21 baw_user_profile.property
