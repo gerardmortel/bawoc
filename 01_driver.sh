@@ -12,3 +12,4 @@ echo ""
 ./05_baw_prerequisites_property.sh
 ./06_edit_property_files.sh
 ./07_generate_property_files.sh
+./08_create_secrets.sh
