@@ -16,7 +16,7 @@ cd ibm-cs-bawautomation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernet
 # Edit baw_db_name_user.property
 cp -p baw_db_name_user.property baw_db_name_user.property.orig
 # %s/<DB_SERVER_NAME>\.GCD/GCDDB\.GCD/g
-sed -r "s|<DB_SERVER_NAME>.GCD|GCDDB.GCD|g" baw_db_name_user.property > baw_db_name_user.property.1
+sed -r "s|<DB_SERVER_NAME>.GCD|GCDDB.GCD|g" baw_db_name_user.property.orig > baw_db_name_user.property.1
 # %s/<DB_SERVER_NAME>\.BAWDOCS/BAWDOCS\.BAWDOCS/g
 sed -r "s|<DB_SERVER_NAME>.BAWDOCS|BAWDOCS.BAWDOCS|g" baw_db_name_user.property.1 > baw_db_name_user.property.2
 # %s/<DB_SERVER_NAME>\.BAWDOS/BAWDOS\.BAWDOS/g
@@ -34,20 +34,22 @@ sed -r "s|<DB_SERVER_NAME>.ICN|ICNDB.ICN|g" baw_db_name_user.property.7 > baw_db
 # %s/<DB_SERVER_NAME>\.APP/AAEDB\.APP/g
 sed -r "s|<DB_SERVER_NAME>.APP|AAEDB.APP|g" baw_db_name_user.property.8 > baw_db_name_user.property.9
 # %s/<DB_SERVER_NAME>\.BAW_/BPMDB\.BAW_/g
-sed -r "s|<DB_SERVER_NAME>.BAW_|BPMDB.BAW_|g" baw_db_name_user.property.8 > baw_db_name_user.property.9
+sed -r "s|<DB_SERVER_NAME>.BAW_|BPMDB.BAW_|g" baw_db_name_user.property.9 > baw_db_name_user.property.10
 # %s/DB_NAME=\"BAWDB\"/DB_NAME=\"BPMDB\"/g
-sed -r "s|DB_NAME="BAWDB"|DB_NAME="BPMDB"|g" baw_db_name_user.property.9 > baw_db_name_user.property.10
+sed -r "s|DB_NAME="BAWDB"|DB_NAME="BPMDB"|g" baw_db_name_user.property.10 > baw_db_name_user.property.11
 # %s/<DB_SERVER_NAME>\.UMS_/UMSDB\.UMS_/g
-sed -r "s|<DB_SERVER_NAME>.UMS_|UMSDB.UMS_|g" baw_db_name_user.property.10 > baw_db_name_user.property.11
-sed -r "s/USER_NAME=\"<youruser1>\"/USER_NAME=\"db2inst1\"/g" baw_db_name_user.property.11 > baw_db_name_user.property.12
-sed -r "s/USER_PASSWORD=\"<yourpassword>\"/USER_PASSWORD=\"cicdtest\"/g" baw_db_name_user.property.12 > baw_db_name_user.property.13
+sed -r "s|<DB_SERVER_NAME>.UMS_|UMSDB.UMS_|g" baw_db_name_user.property.11 > baw_db_name_user.property.12
+sed -r "s/USER_NAME=\"<youruser1>\"/USER_NAME=\"db2inst1\"/g" baw_db_name_user.property.12 > baw_db_name_user.property.13
+sed -r "s/USER_PASSWORD=\"<yourpassword>\"/USER_PASSWORD=\"cicdtest\"/g" baw_db_name_user.property.13 > baw_db_name_user.property.14
+
+# Copy last file to first file
 rm -f baw_db_name_user.property
-cp baw_db_name_user.property.13 baw_db_name_user.property
+cp baw_db_name_user.property.14 baw_db_name_user.property
 
 # Edit baw_db_server.property
 cp -p baw_db_server.property baw_db_server.property.orig
 # %s/SERVERNAME=\"<Required>\"/SERVERNAME=\"c-db2ucluster-cp4ba-db2u.cp4ba.svc.cluster.local\"/g
-sed -r "s/SERVERNAME=\"<Required>\"/SERVERNAME=\"c-db2ucluster-cp4ba-db2u.cp4ba.svc.cluster.local\"/g" baw_db_server.property > baw_db_server.property.1
+sed -r "s/SERVERNAME=\"<Required>\"/SERVERNAME=\"c-db2ucluster-cp4ba-db2u.cp4ba.svc.cluster.local\"/g" baw_db_server.property.orig > baw_db_server.property.1
 # %s/PORT=\"<Required>\"/PORT=\"50000\"/g
 sed -r "s/PORT=\"<Required>\"/PORT=\"50000\"/g" baw_db_server.property.1 > baw_db_server.property.2
 # %s/SSL_ENABLE=\"True\"/SSL_ENABLE=\"false\"/g
@@ -63,7 +65,7 @@ cp baw_db_server.property.5 baw_db_server.property
 
 # Edit baw_LDAP.property
 cp -p baw_LDAP.property baw_LDAP.property.orig
-sed -r 's|LDAP_SERVER="<Required>"|LDAP_SERVER="openldap.cp4ba.svc.cluster.local"|g' baw_LDAP.property > baw_LDAP.property.1
+sed -r 's|LDAP_SERVER="<Required>"|LDAP_SERVER="openldap.cp4ba.svc.cluster.local"|g' baw_LDAP.property.orig > baw_LDAP.property.1
 sed -r 's|LDAP_PORT="<Required>"|LDAP_PORT="389"|g' baw_LDAP.property.1 > baw_LDAP.property.2
 sed -r 's|LDAP_BASE_DN="<Required>"|LDAP_BASE_DN="dc=your,dc=company,dc=com"|g' baw_LDAP.property.2 > baw_LDAP.property.3
 sed -r 's|LDAP_BIND_DN="<Required>"|LDAP_BIND_DN="cn=admin,dc=your,dc=company,dc=com"|g' baw_LDAP.property.3 > baw_LDAP.property.4
@@ -85,7 +87,7 @@ cp baw_LDAP.property.15 baw_LDAP.property
 
 # Edit baw_user_profile.property
 cp -p baw_user_profile.property baw_user_profile.property.orig
-sed -r "s/CONTENT.APPLOGIN_USER=\"<Required>\"/CONTENT.APPLOGIN_USER=\"${P8ADMINUSER}\"/g" baw_user_profile.property > baw_user_profile.property.1
+sed -r "s/CONTENT.APPLOGIN_USER=\"<Required>\"/CONTENT.APPLOGIN_USER=\"${P8ADMINUSER}\"/g" baw_user_profile.property.orig > baw_user_profile.property.1
 sed -r "s/CONTENT.APPLOGIN_PASSWORD=\"<Required>\"/CONTENT.APPLOGIN_PASSWORD=\"${P8ADMINPASSWORD}\"/g" baw_user_profile.property.1 > baw_user_profile.property.2
 sed -r "s/CONTENT.LTPA_PASSWORD=\"<Required>\"/CONTENT.LTPA_PASSWORD=\"${P8ADMINPASSWORD}\"/g" baw_user_profile.property.2 > baw_user_profile.property.3
 sed -r "s/CONTENT.KEYSTORE_PASSWORD=\"<Required>\"/CONTENT.KEYSTORE_PASSWORD=\"password\"/g" baw_user_profile.property.3 > baw_user_profile.property.4
