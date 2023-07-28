@@ -17,4 +17,5 @@ sed -ri "s/lc_ldap_user_display_name_attr: \"cn\"/lc_ldap_user_display_name_attr
 sed -ri "s/(    lc_ldap_group_membership_search_filter:).*/\1 (\&(cn=%v}(objectcategory=group))/" ibm_cp4a_cr_production_FC_workflow-standalone_final.yaml
 sed -ri "s/(    lc_ldap_group_member_id_map:).*/\1 'memberOf:member'/" ibm_cp4a_cr_production_FC_workflow-standalone_final.yaml
 sed -ri "s/(      lc_user_filter:).*/\1 (\&(cn=%v)(objectclass=inetOrgPerson))/" ibm_cp4a_cr_production_FC_workflow-standalone_final.yaml
-sed -ri "s/(      lc_group_filter:).*/\1 (\&(cn=%v)(|(objectclass=groupofnames)(objectclass=groupofuniquenames)(objectclass=groupofurls)))/" ibm_cp4a_cr_production_FC_workflow-standalone_final.yaml
+#sed -ri "s/(      lc_group_filter:).*/\1 (\&(cn=%v)(|(objectclass=groupofnames)(objectclass=groupofuniquenames)(objectclass=groupofurls)))/" ibm_cp4a_cr_production_FC_workflow-standalone_final.yaml
+sed -ri "s/(      lc_group_filter:).*/\1 >-\n        (\&(cn=%v)(|(objectclass=groupofnames)(objectclass=groupofuniquenames)(objectclass=groupofurls)))/" ibm_cp4a_cr_production_FC_workflow-standalone_final.yaml
