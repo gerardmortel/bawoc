@@ -65,6 +65,12 @@ tar -xvf 22.0.2-IF004.tar
 ###########################################################
 ### From https://www.ibm.com/support/pages/node/6590269 ###
 ###########################################################
+# Create the project where openldap will live if it does not already exist
+#oc new-project ${CP4BANAMESPACE}
+oc new-project ${NAMESPACE}
+
+# Switch to project cp4ba
+oc project ${NAMESPACE}
 
 # Apply IBM Cloud Pak for Automation yamls
 # cd ${HOME}/offline/ibm-*/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/descriptors
