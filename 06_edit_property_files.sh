@@ -97,7 +97,7 @@ sed -r "s/CONTENT_INITIALIZATION.LDAP_ADMIN_USER_NAME=\"<Required>\"/CONTENT_INI
 ## group name for P8 domain admin, for example, "P8Administrators". This parameter accepts comma-separated lists, for example, "P8Group1, P8Group2"
 sed -r "s/CONTENT_INITIALIZATION.LDAP_ADMINS_GROUPS_NAME=\"<Required>\"/CONTENT_INITIALIZATION.LDAP_ADMINS_GROUPS_NAME=\"${P8ADMINGROUP}\"/g" baw_user_profile.property.5 > baw_user_profile.property.6
 ## user name and group name for object store admin, for example, "CEAdmin" or "P8Administrators". This parameter accepts comma-separated lists, for example, "P8Group1, P8Group2"
-sed -r "s/CONTENT_INITIALIZATION.CPE_OBJ_STORE_ADMIN_USER_GROUPS=\"<Required>\"/CONTENT_INITIALIZATION.CPE_OBJ_STORE_ADMIN_USER_GROUPS=\"${P8ADMINUSER}\"/g" baw_user_profile.property.6 > baw_user_profile.property.7
+sed -r "s/CONTENT_INITIALIZATION.CPE_OBJ_STORE_ADMIN_USER_GROUPS=\"<Required>\"/CONTENT_INITIALIZATION.CPE_OBJ_STORE_ADMIN_USER_GROUPS=\"${P8ADMINGROUP}\"/g" baw_user_profile.property.6 > baw_user_profile.property.7
 ## Specify whether to enable workflow for the object store, the default vaule is "Yes"
 # CONTENT_INITIALIZATION.CPE_OBJ_STORE_ENABLE_WORKFLOW="Yes"
 ## Specify a table space for the workflow data
