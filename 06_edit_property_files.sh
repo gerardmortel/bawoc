@@ -23,28 +23,26 @@ sed -r "s|<DB_SERVER_NAME>.BAWDOCS|BAWDOCS.BAWDOCS|g" baw_db_name_user.property.
 sed -r "s|<DB_SERVER_NAME>.BAWDOS|BAWDOS.BAWDOS|g" baw_db_name_user.property.2 > baw_db_name_user.property.3
 # %s/<DB_SERVER_NAME>\.BAWTOS/BAWTOS\.BAWTOS/g
 sed -r "s|<DB_SERVER_NAME>.BAWTOS|BAWTOS.BAWTOS|g" baw_db_name_user.property.3 > baw_db_name_user.property.4
-# %s/<DB_SERVER_NAME>\.AEOS/AEOSDB\.AEOS/g
-sed -r "s|<DB_SERVER_NAME>.AEOS|AEOSDB.AEOS|g" baw_db_name_user.property.4 > baw_db_name_user.property.5
-# %s/DB_NAME=\"AEOS\"/DB_NAME=\"AEOSDB\"/g
-sed -r "s|DB_NAME="AEOS"|DB_NAME="AEOSDB"|g" baw_db_name_user.property.5 > baw_db_name_user.property.6
-# %s/<DB_SERVER_NAME>\.AEOS/AEOSDB\.AEOS/g
-sed -r "s|<DB_SERVER_NAME>.AEOS|AEOSDB.AEOS|g" baw_db_name_user.property.6 > baw_db_name_user.property.7
+# %s/<DB_SERVER_NAME>\.AEOS/AEOS\.AEOS/g
+sed -r "s|<DB_SERVER_NAME>.AEOS|AEOS.AEOS|g" baw_db_name_user.property.4 > baw_db_name_user.property.5
+# %s/DB_NAME=\"AEOS\"/DB_NAME=\"AEOS\"/g
+# sed -r "s|DB_NAME="AEOS"|DB_NAME="AEOS"|g" baw_db_name_user.property.5 > baw_db_name_user.property.6
 # %s/<DB_SERVER_NAME>\.ICN/ICNDB\.ICN/g
-sed -r "s|<DB_SERVER_NAME>.ICN|ICNDB.ICN|g" baw_db_name_user.property.7 > baw_db_name_user.property.8
+sed -r "s|<DB_SERVER_NAME>.ICN|ICNDB.ICN|g" baw_db_name_user.property.5 > baw_db_name_user.property.6
 # %s/<DB_SERVER_NAME>\.APP/AAEDB\.APP/g
-sed -r "s|<DB_SERVER_NAME>.APP|AAEDB.APP|g" baw_db_name_user.property.8 > baw_db_name_user.property.9
+sed -r "s|<DB_SERVER_NAME>.APP|AAEDB.APP|g" baw_db_name_user.property.6 > baw_db_name_user.property.7
 # %s/<DB_SERVER_NAME>\.BAW_/BPMDB\.BAW_/g
-sed -r "s|<DB_SERVER_NAME>.BAW_|BPMDB.BAW_|g" baw_db_name_user.property.9 > baw_db_name_user.property.10
+sed -r "s|<DB_SERVER_NAME>.BAW_|BPMDB.BAW_|g" baw_db_name_user.property.7 > baw_db_name_user.property.8
 # %s/DB_NAME=\"BAWDB\"/DB_NAME=\"BPMDB\"/g
-sed -r "s|DB_NAME="BAWDB"|DB_NAME="BPMDB"|g" baw_db_name_user.property.10 > baw_db_name_user.property.11
+sed -r "s|DB_NAME="BAWDB"|DB_NAME="BPMDB"|g" baw_db_name_user.property.8 > baw_db_name_user.property.9
 # %s/<DB_SERVER_NAME>\.UMS_/UMSDB\.UMS_/g
-sed -r "s|<DB_SERVER_NAME>.UMS_|UMSDB.UMS_|g" baw_db_name_user.property.11 > baw_db_name_user.property.12
-sed -r "s/USER_NAME=\"<youruser1>\"/USER_NAME=\"db2inst1\"/g" baw_db_name_user.property.12 > baw_db_name_user.property.13
-sed -r "s/USER_PASSWORD=\"<yourpassword>\"/USER_PASSWORD=\"cicdtest\"/g" baw_db_name_user.property.13 > baw_db_name_user.property.14
+sed -r "s|<DB_SERVER_NAME>.UMS_|UMSDB.UMS_|g" baw_db_name_user.property.9 > baw_db_name_user.property.10
+sed -r "s/USER_NAME=\"<youruser1>\"/USER_NAME=\"db2inst1\"/g" baw_db_name_user.property.10 > baw_db_name_user.property.11
+sed -r "s/USER_PASSWORD=\"<yourpassword>\"/USER_PASSWORD=\"cicdtest\"/g" baw_db_name_user.property.11 > baw_db_name_user.property.12
 
 # Copy last file to first file
 rm -f baw_db_name_user.property
-cp baw_db_name_user.property.14 baw_db_name_user.property
+cp baw_db_name_user.property.12 baw_db_name_user.property
 
 # Edit baw_db_server.property
 cp -p baw_db_server.property baw_db_server.property.orig
