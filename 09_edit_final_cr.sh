@@ -24,3 +24,4 @@ sed -ri "s/(      lc_group_filter:).*/\1 >-\n        (\&(cn=*)(|(objectclass=gro
 sed -ri "s/tds:/custom:/g" ibm_cp4a_cr_production_FC_workflow-standalone_final.yaml
  ## The possible values are: "IBM Security Directory Server" or "Microsoft Active Directory" or "Custom"
 sed -ri "s/( lc_selected_ldap_type:) \"IBM.*/\1 \"Custom\"/" ibm_cp4a_cr_production_FC_workflow-standalone_final.yaml
+sed -ri "s/(enable_ssl:) \"\"/\1 false/" ibm_cp4a_cr_production_FC_workflow-standalone_final.yaml
