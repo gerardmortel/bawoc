@@ -87,7 +87,7 @@ cp baw_LDAP.property.15 baw_LDAP.property
 cp -p baw_user_profile.property baw_user_profile.property.orig
 sed -r "s/CONTENT.APPLOGIN_USER=\"<Required>\"/CONTENT.APPLOGIN_USER=\"${P8ADMINUSER}\"/g" baw_user_profile.property.orig > baw_user_profile.property.1
 sed -r "s/CONTENT.APPLOGIN_PASSWORD=\"<Required>\"/CONTENT.APPLOGIN_PASSWORD=\"${P8ADMINPASSWORD}\"/g" baw_user_profile.property.1 > baw_user_profile.property.2
-sed -r "s/CONTENT.LTPA_PASSWORD=\"<Required>\"/CONTENT.LTPA_PASSWORD=\"${P8ADMINPASSWORD}\"/g" baw_user_profile.property.2 > baw_user_profile.property.3
+sed -r "s/CONTENT.LTPA_PASSWORD=\"<Required>\"/CONTENT.LTPA_PASSWORD=\"${BANLTPAPASSWORD}\"/g" baw_user_profile.property.2 > baw_user_profile.property.3
 sed -r "s/CONTENT.KEYSTORE_PASSWORD=\"<Required>\"/CONTENT.KEYSTORE_PASSWORD=\"password\"/g" baw_user_profile.property.3 > baw_user_profile.property.4
 # CONTENT_INITIALIZATION.ENABLE="Yes"
 ## user name for P8 domain admin, for example, "CEAdmin". This parameter accepts comma-separated lists, for example, "CEAdmin1, CEAdmin2"
