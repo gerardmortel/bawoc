@@ -36,13 +36,13 @@ sed -r "s|<DB_SERVER_NAME>.BAW_|BPMDB.BAW_|g" baw_db_name_user.property.7 > baw_
 # %s/DB_NAME=\"BAWDB\"/DB_NAME=\"BAWDB\"/g
 #sed -r "s|DB_NAME="BAWDB"|DB_NAME="BAWDB"|g" baw_db_name_user.property.8 > baw_db_name_user.property.9
 # %s/<DB_SERVER_NAME>\.UMS_/UMSDB\.UMS_/g
-sed -r "s|<DB_SERVER_NAME>.UMS_|UMSDB.UMS_|g" baw_db_name_user.property.9 > baw_db_name_user.property.10
-sed -r "s/USER_NAME=\"<youruser1>\"/USER_NAME=\"db2inst1\"/g" baw_db_name_user.property.10 > baw_db_name_user.property.11
-sed -r "s/USER_PASSWORD=\"<yourpassword>\"/USER_PASSWORD=\"cicdtest\"/g" baw_db_name_user.property.11 > baw_db_name_user.property.12
+sed -r "s|<DB_SERVER_NAME>.UMS_|UMSDB.UMS_|g" baw_db_name_user.property.8 > baw_db_name_user.property.9
+sed -r "s/USER_NAME=\"<youruser1>\"/USER_NAME=\"db2inst1\"/g" baw_db_name_user.property.9 > baw_db_name_user.property.10
+sed -r "s/USER_PASSWORD=\"<yourpassword>\"/USER_PASSWORD=\"cicdtest\"/g" baw_db_name_user.property.10 > baw_db_name_user.property.11
 
 # Copy last file to first file
 rm -f baw_db_name_user.property
-cp baw_db_name_user.property.12 baw_db_name_user.property
+cp baw_db_name_user.property.11 baw_db_name_user.property
 
 # Edit baw_db_server.property
 cp -p baw_db_server.property baw_db_server.property.orig
