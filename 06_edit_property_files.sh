@@ -32,7 +32,7 @@ sed -r "s|<DB_SERVER_NAME>.ICN|ICNDB.ICN|g" baw_db_name_user.property.5 > baw_db
 # %s/<DB_SERVER_NAME>\.APP/AAEDB\.APP/g
 sed -r "s|<DB_SERVER_NAME>.APP|AAEDB.APP|g" baw_db_name_user.property.6 > baw_db_name_user.property.7
 # %s/<DB_SERVER_NAME>\.BAW_/BAWDB\.BAW_/g
-sed -r "s|<DB_SERVER_NAME>.BAW_|BPMDB.BAW_|g" baw_db_name_user.property.7 > baw_db_name_user.property.8
+sed -r "s|<DB_SERVER_NAME>.BAW_|BAWDB.BAW_|g" baw_db_name_user.property.7 > baw_db_name_user.property.8
 # %s/DB_NAME=\"BAWDB\"/DB_NAME=\"BAWDB\"/g
 #sed -r "s|DB_NAME="BAWDB"|DB_NAME="BAWDB"|g" baw_db_name_user.property.8 > baw_db_name_user.property.9
 # %s/<DB_SERVER_NAME>\.UMS_/UMSDB\.UMS_/g
