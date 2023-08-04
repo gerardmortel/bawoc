@@ -31,10 +31,10 @@ sed -r "s|<DB_SERVER_NAME>.AEOS|AEOS.AEOS|g" baw_db_name_user.property.4 > baw_d
 sed -r "s|<DB_SERVER_NAME>.ICN|ICNDB.ICN|g" baw_db_name_user.property.5 > baw_db_name_user.property.6
 # %s/<DB_SERVER_NAME>\.APP/AAEDB\.APP/g
 sed -r "s|<DB_SERVER_NAME>.APP|AAEDB.APP|g" baw_db_name_user.property.6 > baw_db_name_user.property.7
-# %s/<DB_SERVER_NAME>\.BAW_/BPMDB\.BAW_/g
+# %s/<DB_SERVER_NAME>\.BAW_/BAWDB\.BAW_/g
 sed -r "s|<DB_SERVER_NAME>.BAW_|BPMDB.BAW_|g" baw_db_name_user.property.7 > baw_db_name_user.property.8
-# %s/DB_NAME=\"BAWDB\"/DB_NAME=\"BPMDB\"/g
-sed -r "s|DB_NAME="BAWDB"|DB_NAME="BPMDB"|g" baw_db_name_user.property.8 > baw_db_name_user.property.9
+# %s/DB_NAME=\"BAWDB\"/DB_NAME=\"BAWDB\"/g
+#sed -r "s|DB_NAME="BAWDB"|DB_NAME="BAWDB"|g" baw_db_name_user.property.8 > baw_db_name_user.property.9
 # %s/<DB_SERVER_NAME>\.UMS_/UMSDB\.UMS_/g
 sed -r "s|<DB_SERVER_NAME>.UMS_|UMSDB.UMS_|g" baw_db_name_user.property.9 > baw_db_name_user.property.10
 sed -r "s/USER_NAME=\"<youruser1>\"/USER_NAME=\"db2inst1\"/g" baw_db_name_user.property.10 > baw_db_name_user.property.11
