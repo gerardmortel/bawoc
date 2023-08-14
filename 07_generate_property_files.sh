@@ -7,7 +7,7 @@ echo "==========================================================================
 echo ""
 
 # Get deployment hostname suffix, replace "api" with "apps"
-DEPLOYMENTHOSTNAMESUFFIX=$(sed "s/api/apps/" <<< "$HOSTNAME")
+DEPLOYMENTHOSTNAMESUFFIX=$(sed "s/api/$NAMESPACE.apps/" <<< "$HOSTNAME")
 
 # Generate property files
 cd ibm-cs-bawautomation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts
