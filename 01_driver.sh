@@ -14,3 +14,4 @@ echo ""
 ./07_generate_property_files.sh
 ./08_create_secrets.sh
 ./09_edit_final_cr.sh
+./10_create_ingresses.sh
