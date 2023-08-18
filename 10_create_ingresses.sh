@@ -19,6 +19,7 @@ data:
   proxy-buffering: "on"
   proxy-buffers-number: "8"
 EOF
+echo "#### Create the ingress-nginx-controller"
 oc apply -f ingress-nginx-controller.yaml
 
 echo "#### Download ingress.yaml__8.zip"
