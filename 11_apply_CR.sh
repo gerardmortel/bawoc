@@ -26,16 +26,18 @@ do
         echo "#### BAWDB database was NOT found, sleeping for 10 seconds"
         sleep 10
       fi
-      echo ""
     done
     echo "#### Exiting check c-db2ucluster-cp4ba-db2u-0 is ready loop."
     break
   else
-    echo "db2ucluster is NOT available."
-    echo "Sleeping for 10 seconds"
+    echo "#### db2ucluster is NOT available."
+    echo "##### Sleeping for 10 seconds"
     sleep 10
   fi
 done
 
 echo "#### Apply CR"
 oc apply -f ibm-cs-bawautomation/inventory/cp4aOperatorSdk/files/deploy/crs/cert-kubernetes/scripts/baw-prerequisites/generated-cr/ibm_cp4a_cr_production_FC_workflow-standalone_final.yaml
+
+echo "#### Restart CP4A Operator"
+oc get pod|grep ibm-cp4a-operator | awk '{print $1}' | xargs oc delete pod
