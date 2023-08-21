@@ -15,3 +15,4 @@ echo ""
 ./08_create_secrets.sh
 ./09_edit_final_cr.sh
 ./10_create_ingresses.sh
+./11_apply_CR.sh
