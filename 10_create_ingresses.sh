@@ -32,8 +32,9 @@ echo "#### Backup ingress.yaml"
 cp -p ingress.yaml ingress.yaml.orig
 
 echo "#### Replace <hostname_suffix> and <metadata_name>"
-# %s/<hostname_suffix>/cp4ba\.apps\.shandy\.cp\.fyre\.ibm\.com/g
-sed -ri "s/<hostname_suffix>/cp4ba\.apps\.shandy\.cp\.fyre\.ibm\.com/g" ingress.yaml
+HOSTNAMESUFFIX=$(sed "s/api\.//" <<< "$HOSTNAME")
+UNIQUENAME=$(sed "s/\.cp\.fyre\.ibm\.com//" <<< $HOSTNAMESUFFIX)
+sed -ri "s/<hostname_suffix>/cp4ba\.apps\.$UNIQUENAME\.cp\.fyre\.ibm\.com/g" ingress.yaml
 # %s/<metadata_name>/workflow/g
 sed -ri "s/<metadata_name>/workflow/g" ingress.yaml
 
