@@ -1,0 +1,349 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: <metadata_name>-ban-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - hosts:
+    - ban-<hostname_suffix>
+    secretName: <metadata_name>-ban-ext-tls-secret
+  rules:
+    - host: ban-<hostname_suffix>
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-navigator-svc
+              port: 
+                number: 9443
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:  
+  name: <metadata_name>-fncm-ingress  
+  annotations:    
+    kubernetes.io/ingress.class: "nginx"    
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - hosts:
+    - fncm-<hostname_suffix>
+    secretName: <metadata_name>-fncm-ext-tls-secret
+  rules:
+    - host: fncm-<hostname_suffix>
+      http:
+        paths:
+        - path: /acce
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /P8CE
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /FileNet
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /wsi
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /peengine
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /pewsi
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /ibmccepo
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /restReg
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /clientDownload
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /WSCPEService
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /ibm/wsatservice
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /oidcclient/redirect/InternalUmsCPE
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cpe-svc
+              port: 
+                number: 9443
+        - path: /openfncmis_wlp
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cmis-svc
+              port: 
+                number: 9443
+        - path: /oidcclient/redirect/InternalUmsCMIS
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-cmis-svc
+              port: 
+                number: 9443
+        - path: /content-services-graphql
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-graphql-svc
+              port: 
+                number: 9443
+        - path: /oidcclient/redirect/InternalUmsGRAPHQL
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-graphql-svc
+              port: 
+                number: 9443
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ae-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+  labels:
+    app.kubernetes.io/managed-by: Operator
+    app.kubernetes.io/name: app-engine
+spec:
+  tls:
+  - hosts:
+    - ae-workspace-<hostname_suffix>
+    secretName: <metadata_name>-ae-external-tls-secret
+  rules:
+    - host: ae-workspace-<hostname_suffix>
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-workspace-aae-ae-service 
+              port:
+                number: 443
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pfs-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - hosts:
+    - pfs-<hostname_suffix>
+    secretName: <metadata_name>-pfs-ext-tls-secret
+  rules:
+    - host: pfs-<hostname_suffix>
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-pfs-service
+              port: 
+                number: 9443
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ums-profiles-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - hosts:
+    - ums-profiles-<hostname_suffix>
+    secretName: ibm-dba-ums-external-tls-profiles-secret-internal
+  rules:
+    - host: ums-profiles-<hostname_suffix>
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-ums-profiles-service
+              port: 
+                name: https
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ums-scim-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - hosts:
+    - ums-scim-<hostname_suffix>
+    secretName: ibm-dba-ums-external-tls-scim-secret-internal
+  rules:
+    - host: ums-scim-<hostname_suffix>
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-ums-scim-service
+              port: 
+                name: https
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ums-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - hosts:
+    - ums-<hostname_suffix>
+    secretName: ibm-dba-ums-external-tls-secret-internal
+  rules:
+    - host: ums-<hostname_suffix>
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-ums-service
+              port: 
+                name: https
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ums-sso-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - hosts:
+    - ums-sso-<hostname_suffix>
+    secretName: ibm-dba-ums-external-tls-sso-secret-internal
+  rules:
+    - host: ums-sso-<hostname_suffix>
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-ums-sso-service
+              port: 
+                name: https
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ums-teams-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - hosts:
+    - ums-teams-<hostname_suffix>
+    secretName: ibm-dba-ums-external-tls-teams-secret-internal
+  rules:
+    - host: ums-teams-<hostname_suffix>
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-ums-teams-service
+              port: 
+                name: https
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: baw-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - hosts:
+    - baw-bawins1-<hostname_suffix>
+    secretName: <metadata_name>-bawins1-baw-ext-tls-secret
+  rules:
+    - host: baw-bawins1-<hostname_suffix>
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: <metadata_name>-bawins1-baw-service
+              port: 
+                number: 9443

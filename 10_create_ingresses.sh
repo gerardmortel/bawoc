@@ -22,11 +22,11 @@ EOF
 echo "#### Create the ingress-nginx-controller"
 oc apply -f ingress-nginx-controller.yaml
 
-echo "#### Download ingress.yaml__8.zip"
-curl -L https://www.ibm.com/support/pages/system/files/inline-files/ingress.yaml__8.zip -o ingress.yaml__8.zip
+# echo "#### Download ingress.yaml__8.zip"
+# curl -L https://www.ibm.com/support/pages/system/files/inline-files/ingress.yaml__8.zip -o ingress.yaml__8.zip
 
-echo "#### Extract ingress.yaml__8.zip"
-unzip ingress.yaml__8.zip
+# echo "#### Extract ingress.yaml__8.zip"
+# unzip ingress.yaml__8.zip
 
 echo "#### Backup ingress.yaml"
 cp -p ingress.yaml ingress.yaml.orig
